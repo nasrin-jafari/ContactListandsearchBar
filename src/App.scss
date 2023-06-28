@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+.conatactForm {
+  width: 32%;
+  height: 570px;
+  border: 1px solid gray;
+  text-align: center;
+  &__header {
+    width: 100%;
+    height: 60px;
+    background-color: #28a745;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__content {
+    h1 {
+      color: #28a745;
+      text-shadow: 4px 4px 5px #a9daa6;
+      margin: 28px 0;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    .input__Group {
+      width: 64%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      label {
+        color: rgb(187, 47, 47);
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      input {
+        height: 36px;
+        border-radius: 18px;
+        padding: 8px;
+        border: 1px solid #28a745;
+        outline-color: green;
+      }
+    }
+    .btn {
+      margin-top: 20px;
+      width: 100px;
+      height: 36px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      color: white;
+      background-color: #28a745;
+    }
+  }
+}
+.ContactList {
+  height: 570px;
+  width: 32%;
+  border: 1px solid gray;
+  overflow-y: scroll;
+
+  &__header {
+    width: 100%;
+    height: 60px;
+    background-color: #28a745;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.ContactItem {
+  padding: 12px;
+  height: 90px;
+  background-color: rgb(202, 231, 176);
+  box-shadow: 4px 4px 8px 2px #bdbabab0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 18px 12px;
+  border-radius: 12px;
+  flex-wrap: wrap;
+  &__group {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      color: rgb(33, 63, 12);
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+  }
+}
+.ContactListSearch {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid rgb(38, 173, 38);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  input {
+    width: 60%;
+    padding: 8px;
+    height: 40px;
+    border-radius: 18px;
+    background-color: rgb(202, 231, 176);
+    border: 1px solid #28a745;
+    outline-color: green;
+  }
+}
+.close-btn {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
