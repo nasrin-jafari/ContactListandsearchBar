@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Inputs from "./Inputs";
 import "./../App.scss";
 
 export default function ContactForm({
@@ -10,6 +11,32 @@ export default function ContactForm({
   setEmailValue,
   setPhoneValue,
 }) {
+  const inputs = [
+    {
+      id: "name",
+      label: "contact name ",
+      type: "text",
+      placeholder: "Enter conatact name",
+      value: nameValue,
+      onchang: setNameValue,
+    },
+    {
+      id: "Email",
+      label: "Email : ",
+      type: "mail",
+      placeholder: "Email@test.com",
+      value: emailValue,
+      onchang: setEmailValue,
+    },
+    {
+      id: "Phone",
+      label: "Phone : ",
+      type: "tel",
+      placeholder: "+98 .......",
+      value: PhoneValue,
+      onchang: setPhoneValue,
+    },
+  ];
   return (
     <div className="conatactForm">
       <div className="conatactForm__header">
@@ -19,36 +46,21 @@ export default function ContactForm({
         <h1>add new contact</h1>
       </div>
       <form onSubmit={submitForm}>
-        <div className="input__Group">
-          <label htmlFor="name">contact name : </label>
-          <input
-            type="text"
-            id="name"
-            placeholder="Enter conatact name"
-            value={nameValue}
-            onChange={({ target }) => setNameValue(target.value)}
-          />
-        </div>
-        <div className="input__Group">
-          <label htmlFor="Email">Email : </label>
-          <input
-            type="mail"
-            id="Email"
-            placeholder="Email@test.com"
-            value={emailValue}
-            onChange={({ target }) => setEmailValue(target.value)}
-          />
-        </div>
-        <div className="input__Group">
-          <label htmlFor="Phone">Phone :</label>
-          <input
-            type="tel"
-            id="Phone"
-            placeholder="+98 ......."
-            value={PhoneValue}
-            onChange={({ target }) => setPhoneValue(target.value)}
-          />
-        </div>
+        {inputs.map(
+          ({ id, label, type, placeholder, value, onchang }, index) => {
+            return (
+              <Inputs
+                key={`${index} ${id}`}
+                id={id}
+                label={label}
+                type={type}
+                placeholder={placeholder}
+                value={value}
+                onchang={onchang}
+              ></Inputs>
+            );
+          }
+        )}
         <button type="submit" className="btn">
           save contact
         </button>
